@@ -9,7 +9,7 @@ class MySpider(scrapy.spiders.Spider):
     name = "smzdm"
     allowed_domains = []
     start_urls = [
-        "http://faxian.smzdm.com/h1s0t0f95c0p1/#filter-block"
+        "http://faxian.smzdm.com/h2s0t0f95c0p1/#filter-block"
     ]
 
     def parse(self, response):

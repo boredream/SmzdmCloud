@@ -16,10 +16,10 @@ class SmzdmcloudPipeline(object):
 
 class JsonWithEncodingPipeline(object):
     def __init__(self):
-        self.file = codecs.open('data.json', 'w', encoding='utf-8')
+        self.file = codecs.open('data.txt', 'w', encoding='utf-8')
 
     def process_item(self, item, spider):
-        line = json.dumps(dict(item), ensure_ascii=False) + ",\n"
+        line = json.dumps(dict(item), ensure_ascii=False) + "\n"
         self.file.write(line)
         return item
 
