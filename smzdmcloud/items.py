@@ -13,4 +13,5 @@ class SmzdmcloudItem(scrapy.Item):
     name = scrapy.Field()
     image = scrapy.Field()
     link = scrapy.Field()
+    worth = scrapy.Field()
     pass
