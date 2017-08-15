@@ -19,9 +19,14 @@ class MySpider(scrapy.spiders.Spider):
 
         for sel in response.xpath('//ul/li'):
             name = sel.xpath('div/h5/a/text()').extract()
-            if len(name) == 0:
+            image = sel.xpath('div/div[@class="feed-ver-pic"]/a/img/@src').extract()
+            link = sel.xpath('div/div/div/div/div/a/@href').extract()
+
+            if len(name) + len(image) + len(link) == 0:
                 continue
+
             item = SmzdmcloudItem()
             item['name'] = name[0].decode('utf-8')
-            print item['name']
+            item['image'] = image[0]
+            item['link'] = link[0]
             yield item
