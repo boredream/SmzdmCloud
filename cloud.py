@@ -37,7 +37,9 @@ def crawl(**params):
             exist_data = None
 
         if exist_data:
-            # 已经存在数据，不再重复添加
+            # 已经存在数据，只更新点赞信息
+            exist_data.set('worth', data['worth'])
+            exist_data.save()
             continue
 
         obj = leancloud.Object().create(class_name='Goods')

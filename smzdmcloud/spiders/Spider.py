@@ -30,5 +30,5 @@ class MySpider(scrapy.spiders.Spider):
             item['name'] = name[0].decode('utf-8')
             item['image'] = image[0]
             item['link'] = link[0]
-            item['worth'] = worth[0]
+            item['worth'] = int(worth[0])
             yield item
