@@ -12,14 +12,6 @@ engine = Engine()
 
 
 @engine.define
-def hello(**params):
-    if 'name' in params:
-        return 'Hello, {}!'.format(params['name'])
-    else:
-        return 'Hello, LeanCloud!'
-
-
-@engine.define
 def crawl(**params):
     print 'start crawl'
     os.system('scrapy crawl smzdm --nolog')
