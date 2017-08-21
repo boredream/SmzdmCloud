@@ -36,6 +36,11 @@ def crawl(**params):
 
         obj = leancloud.Object().create(class_name='Goods')
         obj.set('name', data['name'])
+        obj.set('user', {
+            '__type': 'Pointer',
+            'className': '_User',
+            'objectId': '5992a69f570c35006b7efa00'
+        })
         obj.set('image', data['image'])
         obj.set('link', data['link'])
         obj.set('worth', data['worth'])
